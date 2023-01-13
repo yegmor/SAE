@@ -93,10 +93,11 @@ class load_bucker_data(data.Dataset):
     
     def __getitem__(self, index):
         
-        if type(index)==np.ndarray or type(index)==torch.Tensor:
+        if type(index) == np.ndarray or type(index) == torch.Tensor:
             assert len(index) == 1, 'Only minibatch of 1 supported'
             index = index[0]        
-        
+
+        # -4 for removing .npz
         id = self.vols_files[index][:-4]
         
         mri = np.load(self.vols_path +
