@@ -29,7 +29,7 @@ def get_prob_atlas(path):
                             53,54,58,60,62,63,
                             72,77,80,85])
 
-    dim1, dim2, dim3, _= atlas.shape
+    dim1, dim2, dim3, _ = atlas.shape
     chs = 14
     one_hot = torch.zeros(1, chs, dim1, dim2, dim3)
 
